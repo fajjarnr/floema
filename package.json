@@ -2,10 +2,11 @@
   "name": "floema",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm run development",
-    "build": "webpack --progress --config webpack.config.build.js",
-    "development": "webpack serve --progress --config webpack.config.development.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "backend:build": "node app.js",
+    "backend:development": "nodemon app.js",
+    "frontend:build": "webpack --progress --config webpack.config.build.js",
+    "frontend:development": "webpack serve --progress --config webpack.config.development.js",
+    "start": "concurrently --kill-others \"yarn run backend:development\" \"yarn run frontend:development\""
   },
   "author": "Fajar Nur Rohman",
   "devDependencies": {
