@@ -1,2 +1,5 @@
 node_modules
 yarn.lock
+public
+.env
+.env.local
